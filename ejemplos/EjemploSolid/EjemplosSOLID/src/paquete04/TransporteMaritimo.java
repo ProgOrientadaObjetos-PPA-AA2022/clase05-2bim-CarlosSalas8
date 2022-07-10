@@ -28,6 +28,14 @@ public class TransporteMaritimo extends Transporte {
     public double obtenerTarifa() {
         return tarifa;
     }
+    @Override
+     public String toString() {
+        String cadena = String.format("Cooperativa Maritima: %s\n "
+                +"Tarifa: $%.2f\n",
+                transporteMritimo,
+                tarifa);
+        return cadena;
+    }
 }
     
     

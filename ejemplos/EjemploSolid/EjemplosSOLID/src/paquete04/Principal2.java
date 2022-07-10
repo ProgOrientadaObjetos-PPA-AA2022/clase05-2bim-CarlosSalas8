@@ -30,93 +30,105 @@ public class Principal2 {
         Scanner sc = new Scanner(System.in);
 
         int opciones;
+        String entrada;
 
         ArrayList<Transporte> tp = new ArrayList<Transporte>();
 
-        System.out.println("Ingrese la opcion que desea"
-                + "1. Trasnporte Bus"
-                + "2. Transporte Taxi"
-                + "3.Transporte Aereo"
-                + "4. Transporte Maritimo");
-        opciones = sc.nextInt();
+        do {
 
-        switch (opciones) {
-            case 1:
-                if (opciones == 1) {
+            System.out.println("Ingrese la opcion que desea\n"
+                    + "1. Trasnporte Bus\n"
+                    + "2. Transporte Taxi\n"
+                    + "3.Transporte Aereo\n"
+                    + "4. Transporte Maritimo\n");
+            opciones = sc.nextInt();
 
-                    TransporteBus bus = new TransporteBus();
+            switch (opciones) {
+                case 1:
+                    if (opciones == 1) {
 
-                    System.out.println("Ingrese el Nombre de la Cooperativa: ");
-                    String nombre = sc.nextLine();
-                    bus.establecerCooperativaBus(nombre);
+                        TransporteBus bus = new TransporteBus();
 
-                    bus.establecerTarifa();
-                    
-                    tp.add(bus);
+                        System.out.println("Ingrese el Nombre de la Cooperativa Buses: ");
+                        sc.nextLine();
+                        String nombre = sc.nextLine();
 
-                }
-                break;
+                        bus.establecerCooperativaBus(nombre);
 
-            case 2:
+                        bus.establecerTarifa();
 
-                if (opciones == 2) {
+                        tp.add(bus);
 
-                    TransporteTaxi taxi = new TransporteTaxi();
+                    }
+                    break;
 
-                    System.out.println("Ingrese el Nombre de la Cooperativa: ");
-                    String nombre = sc.nextLine();
-                    taxi.establecerCooperativaTaxi(nombre);
-                    taxi.establecerTarifa();
-                    
-                    tp.add(taxi);
+                case 2:
 
-                }
+                    if (opciones == 2) {
 
-                break;
+                        TransporteTaxi taxi = new TransporteTaxi();
 
-            case 3:
+                        System.out.println("Ingrese el Nombre de la Cooperativa Taxi: ");
+                        sc.nextLine();
+                        String nombre = sc.nextLine();
+                        taxi.establecerCooperativaTaxi(nombre);
+                        taxi.establecerTarifa();
 
-                if (opciones == 3) {
+                        tp.add(taxi);
 
-                    TransporteAereo aereo = new TransporteAereo();
+                    }
 
-                    System.out.println("Ingrese el Nombre de la Cooperativa: ");
-                    String nombre = sc.nextLine();
-                    aereo.establecerTransporteAereo(nombre);
-                    aereo.establecerTarifa();
-                    
-                    tp.add(aereo);
+                    break;
 
-                }
-                break;
+                case 3:
 
-            case 4:
+                    if (opciones == 3) {
 
-                if (opciones == 4) {
+                        TransporteAereo aereo = new TransporteAereo();
 
-                    TransporteMaritimo maritimo = new TransporteMaritimo();
+                        System.out.println("Ingrese el Nombre de la Cooperativa Aereo: ");
+                        sc.nextLine();
+                        String nombre = sc.nextLine();
+                        aereo.establecerTransporteAereo(nombre);
+                        aereo.establecerTarifa();
 
-                    System.out.println("Ingrese el Nombre de la Cooperativa: ");
-                    String nombre = sc.nextLine();
-                    maritimo.establecerTransporteMaritimo(nombre);
-                    maritimo.establecerTarifa();
-                    
-                    tp.add(maritimo);
+                        tp.add(aereo);
 
-                } else {
-                    System.out.println("Opcion incorrecta");
-                }
+                    }
+                    break;
 
-        }
-        System.out.println("Si desesa continuar ingresando Transportes Digite la"
-                + "palabra S, por su contrario Digite la palabra N");
+                case 4:
 
-        String entrada = sc.nextLine();
+                    if (opciones == 4) {
+
+                        TransporteMaritimo maritimo = new TransporteMaritimo();
+
+                        System.out.println("Ingrese el Nombre de la Cooperativa Maritima: ");
+                        sc.nextLine();
+                        String nombre = sc.nextLine();
+                        maritimo.establecerTransporteMaritimo(nombre);
+                        maritimo.establecerTarifa();
+
+                        tp.add(maritimo);
+
+                    }
+                    break;
+
+                default:
+                    System.out.println("Opción incorrecta");
+                    break;
+            }
+            System.out.println("¿Desea ingresar más transportes?\n"
+                    + "Pulse S para seguir ingresando o N para salir");
+            entrada = sc.nextLine();
+
+        }while (entrada.equals("S"));
+
+            TiposTransporte tipos = new TiposTransporte();
+            tipos.establecerTransportes(tp);
+            tipos.establecerPromedioTarifas();
+
+            System.out.printf("%s", tipos);
         
-        while (entrada.equals("S")) {
-            
-
-        }           
-
     }
 }

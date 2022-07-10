@@ -30,4 +30,12 @@ public class TransporteAereo extends Transporte {
     public double obtenerTarifa() {
         return tarifa;
     }
+    @Override
+     public String toString(){
+            String cadena = String.format("Cooperativa Aereo: %s\n "
+                +"Tarifa: $%.2f\n",
+                transporteAereo,
+                tarifa);
+        return cadena;
+    }
 }
