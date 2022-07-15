@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 package paquete10;
+import java.io.Serializable;
 
-public class GeneradorPeliculas {
+public class GeneradorPeliculas implements Serializable {
     
     private APIMovie llave;
     private String url;
