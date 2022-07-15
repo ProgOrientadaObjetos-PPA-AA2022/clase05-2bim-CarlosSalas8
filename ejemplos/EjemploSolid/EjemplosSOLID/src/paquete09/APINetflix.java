@@ -14,7 +14,8 @@ public class APINetflix {
     private String apiKey;
     
     public void establecerApiKey(String ak){
-        apiKey = ak+123123;
+        
+        apiKey = String.format("%s%s",ak, "123123");
     }
     
     public String obtenerApiKey(){
