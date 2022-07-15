@@ -30,7 +30,6 @@ public class GeneradorPeliculas {
         String cadena = String.format("%s:"
                 + "\n%s",
                 obtenerLlave(),obtenerUrl());
-
         return cadena;
     }
 }

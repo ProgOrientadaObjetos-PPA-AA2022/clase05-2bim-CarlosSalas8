@@ -9,5 +9,8 @@ package paquete10;
  * @author SALA I
  */
 public class Principal2 {
+    public static void main(String[] args) {
+        
+    }
     
 }
